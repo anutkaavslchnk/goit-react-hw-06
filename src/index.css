@@ -1,7 +1,8 @@
 body {
     font-family: 'sans-serif', 'Kanit';
     line-height: 1.5;
-  
+  background-color:  rgb(255, 255, 255);
+  font-family: 'Nunito', 'sens-serif';
     color:black;
    
   }

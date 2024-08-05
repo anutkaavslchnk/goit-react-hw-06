@@ -4,31 +4,19 @@ import ContactList from '../ContactList/ContactList';
 import SearchBox from '../SearchBox/SearchBox';
 import firstVal from './values.json';
 import { nanoid } from 'nanoid';
+import s from '../App/App.module.css'
 
 const App = () => {
 
 
-  const [values, setValues] = useState(firstVal);
-  useEffect(() => {
-    const savedContacts = window.localStorage.getItem("contacts");
-    if (savedContacts) {
-      setValues(JSON.parse(savedContacts));
-    }
-  }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem("contacts", JSON.stringify(values));
-  }, [values]);
-
-
   return (
-    <div>
-      <h1>Phonebook</h1>
-      <ContactForm  />
+    <div className={s.container}>
+      <h1 className={s.main}>My Contacts</h1>
       <SearchBox />
-      <ContactList
-
-      />
+     
+   
+      <ContactList/>
+      <ContactForm  />
     </div>
   );
 };

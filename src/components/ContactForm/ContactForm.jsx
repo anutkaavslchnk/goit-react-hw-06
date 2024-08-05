@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectContacts } from "../../redux/selectors";
 import { addContact } from "../../redux/contactsSlice";
 import { nanoid } from "nanoid";
+import { IoAddCircleOutline } from "react-icons/io5";
 
 const FeedbackSchema = Yup.object({
   username: Yup.string().required("Required").min(3, "Too short!").max(50, 'Too long!'),
@@ -27,21 +28,24 @@ const ContactForm = () => {
   };
 
   return (
+    <>    <p className={s.title}>Add new contact</p>
     <Formik initialValues={initialValues} validationSchema={FeedbackSchema} onSubmit={handleSubmit}>
+   
       <Form className={s.form}>
         <label className={s.label}>
           Name
-          <Field name="username" />
+          <Field className={s.input} name="username" />
           <ErrorMessage name="username" component="span" />
         </label>
         <label className={s.label}>
           Number
-          <Field name="number" />
+          <Field  className={s.input} name="number" />
           <ErrorMessage name="number" component="span" />
         </label>
-        <button className={s.btnform} type="submit">Add contact</button>
+        <button className={s.btnform} type="submit">Add card <IoAddCircleOutline size="20px"/></button>
       </Form>
     </Formik>
+    </>
   );
 };
 

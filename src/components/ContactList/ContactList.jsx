@@ -12,11 +12,15 @@ const filterLower=filter.toLowerCase();
 const filteredData=contacts.filter(item=>item.name.toLowerCase().includes(filterLower));
 
   return (
-    <ul className={s.list}>
+    <>
+        <p className={s.contacts}>Contacts</p>
+        <ul className={s.list}>
       {filteredData.map(contact => (
         <Contact key={contact.id} {...contact} />
       ))}
     </ul>
+    </>
+
   );
 };
 

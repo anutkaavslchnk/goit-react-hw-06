@@ -10,8 +10,8 @@ const SearchBox = ()=>{
 
   return (
     <div className={s.form}>
-    <label htmlFor={idishki}>Find contacts by name</label>
-    <input onChange={(e)=>dispatch(changeFilter(e.target.value))} className={s.input}name="text" id={idishki}></input>
+    
+    <input onChange={(e)=>dispatch(changeFilter(e.target.value))} className={s.input}name="text" id={idishki} placeholder="Search contacts by name"></input>
     </div>
   )
 };
