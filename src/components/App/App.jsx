@@ -6,7 +6,7 @@ import firstVal from './values.json';
 import { nanoid } from 'nanoid';
 
 const App = () => {
-  const [valueFind, setValueFind] = useState('');
+
 
   const [values, setValues] = useState(firstVal);
   useEffect(() => {
@@ -20,32 +20,14 @@ const App = () => {
     window.localStorage.setItem("contacts", JSON.stringify(values));
   }, [values]);
 
-  const handleInputChange = e => {
-    setValueFind(e.target.value);
-  };
-
-  const handleAddCard = (name, number) => {
-    const newId = nanoid();
-    const newCard = { id: newId, name, number };
-    setValues(prev => [...prev, newCard]);
-  };
-
-  const handleDeleteCard = id => {
-    setValues(prev => prev.filter(item => item.id !== id));
-  };
-
-  const filteredContacts = values.filter(contact =>
-    contact.name.toLowerCase().includes(valueFind.toLowerCase())
-  );
 
   return (
     <div>
       <h1>Phonebook</h1>
-      <ContactForm handleAddCard={handleAddCard} />
-      <SearchBox valueFind={valueFind} handleInputChange={handleInputChange} />
+      <ContactForm  />
+      <SearchBox />
       <ContactList
-        items={filteredContacts}
-        handleDeleteCard={handleDeleteCard}
+
       />
     </div>
   );
