@@ -1,0 +1,15 @@
+.form{
+    display: flex;
+    gap:15px;
+    width: 40vw;
+    flex-direction: column;
+    padding: 20px 40px;
+   border: 1px solid black;
+}
+.label{
+    display:flex;
+    flex-direction: column;
+}
+.btnform{
+    margin-top: 10px;
+}
